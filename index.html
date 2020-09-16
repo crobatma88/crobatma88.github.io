@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function changeColor() {
+			var box = document.getElementById("box");
+			var r = parseInt(Math.random() * 256);
+			var g = parseInt(Math.random() * 256);
+			var b = parseInt(Math.random() * 256);
+
+			box.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+		}
+	</script>
+	<style>
+		#box{
+			cursor: pointer;
+			width:80px;
+			height:80px;
+			background-color:#ccc;
+		}
+	</style>
+</head>
+<body>
+	<div>click to change color</div>
+	<div id="box" onclick="changeColor()"></div>
+</body>
+</html>

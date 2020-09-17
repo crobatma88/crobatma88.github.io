@@ -1,4 +1,56 @@
+<!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>사람 검색:</p>
+<p><input type="text" ng-model="test"></p>
+
+<ul>
+  <li ng-repeat="x in names | filter:test">
+    {{ x }}
+  </li>
+</ul>
+
+<button ng-click="myFunction()">랜덤 뽑기</button>
+<p>{{ count }}</p>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('myCtrl', function($scope) {
+	// $scope.count = getRandomInt(1,5);
+    $scope.names = [
+        '정현동',
+        '박준후',
+        '박준식',
+        '송현석',
+        '정현돌',
+        '송현동',
+        '구혜림',
+        '구림혜',
+        '앵귤러',
+        '리액트'
+    ];
+    $scope.myFunction = function() {
+    $scope.count= $scope.names[Math.floor(Math.random() * (10 - 1 + 1)) + 0];
+    // $scope.count= Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+  }
+
+});
+
+</script>
+	
+
+
+</body>
+</html>
+
+
+
+<!-- <html>
 <head>
 	<script type="text/javascript">
 		function changeColor() {
@@ -23,4 +75,4 @@
 	<div>click to change color</div>
 	<div id="box" onclick="changeColor()"></div>
 </body>
-</html>
+</html> -->
